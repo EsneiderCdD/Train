@@ -2,14 +2,13 @@ from flask import Blueprint, request, jsonify
 from werkzeug.security import generate_password_hash
 from models import User, db
 
-# Crear el Blueprint
 routes_bp = Blueprint('routes', __name__)
 
 @routes_bp.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
 
-    fullname = data.get('fullname')  # ✅ Corregido aquí
+    fullname = data.get('fullname')  
     email = data.get('email')
     password = data.get('password')
 
@@ -28,7 +27,7 @@ def register():
 
     hashed_password = generate_password_hash(password)
 
-    new_user = User(fullname=fullname, email=email, password=hashed_password)  # ✅ clave correcta
+    new_user = User(fullname=fullname, email=email, password=hashed_password) 
     db.session.add(new_user)
     db.session.commit()
 
