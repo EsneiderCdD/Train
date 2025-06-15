@@ -19,7 +19,7 @@ function Register() {
     setSuccess("");
 
 
-    if (!formData.name || !formData.email || !formData.password) {
+    if (!formData.fullname || !formData.email || !formData.password) {
       setError("Todos los campos son obligatorios.");
       return;
     }
