@@ -15,7 +15,7 @@ function UserList() {
       <h2>Usuarios Registrados</h2>
       <ul>
         {users.map((user, idx) => (
-          <li key={idx}>{user.fullname} - {user.email}</li>
+          <li key={idx}>{user.name} - {user.email}</li>
         ))}
       </ul>
     </div>

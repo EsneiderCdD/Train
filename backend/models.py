@@ -12,4 +12,4 @@ class User(db.Model):
     def __init__(self, fullname, email, password):
         self.fullname = fullname
         self.email = email
-        self.password = generate_password_hash(password)  # Hash automático
+        self.password = generate_password_hash(password) 
